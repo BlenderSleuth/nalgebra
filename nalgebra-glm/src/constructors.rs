@@ -15,28 +15,28 @@ use na::Scalar;
 /// # use nalgebra_glm as glm;
 /// let v = glm::vec1(true);
 /// ```
-pub fn vec1<T: Scalar>(x: T) -> TVec1<T> {
+pub const fn vec1<T: Scalar>(x: T) -> TVec1<T> {
     TVec1::new(x)
 }
 
 /// Creates a new 2D vector.
-pub fn vec2<T: Scalar>(x: T, y: T) -> TVec2<T> {
+pub const fn vec2<T: Scalar>(x: T, y: T) -> TVec2<T> {
     TVec2::new(x, y)
 }
 
 /// Creates a new 3D vector.
-pub fn vec3<T: Scalar>(x: T, y: T, z: T) -> TVec3<T> {
+pub const fn vec3<T: Scalar>(x: T, y: T, z: T) -> TVec3<T> {
     TVec3::new(x, y, z)
 }
 
 /// Creates a new 4D vector.
-pub fn vec4<T: Scalar>(x: T, y: T, z: T, w: T) -> TVec4<T> {
+pub const fn vec4<T: Scalar>(x: T, y: T, z: T, w: T) -> TVec4<T> {
     TVec4::new(x, y, z, w)
 }
 
 /// Create a new 2x2 matrix.
 #[rustfmt::skip]
-pub fn mat2<T: Scalar>(m11: T, m12: T,
+pub const fn mat2<T: Scalar>(m11: T, m12: T,
                        m21: T, m22: T) -> TMat2<T> {
     TMat::<T, 2, 2>::new(
         m11, m12,
@@ -46,7 +46,7 @@ pub fn mat2<T: Scalar>(m11: T, m12: T,
 
 /// Create a new 2x2 matrix.
 #[rustfmt::skip]
-pub fn mat2x2<T: Scalar>(m11: T, m12: T,
+pub const fn mat2x2<T: Scalar>(m11: T, m12: T,
                          m21: T, m22: T) -> TMat2<T> {
     TMat::<T, 2, 2>::new(
         m11, m12,
@@ -56,7 +56,7 @@ pub fn mat2x2<T: Scalar>(m11: T, m12: T,
 
 /// Create a new 2x3 matrix.
 #[rustfmt::skip]
-pub fn mat2x3<T: Scalar>(m11: T, m12: T, m13: T,
+pub const fn mat2x3<T: Scalar>(m11: T, m12: T, m13: T,
                          m21: T, m22: T, m23: T) -> TMat2x3<T> {
     TMat::<T, 2, 3>::new(
         m11, m12, m13,
@@ -66,7 +66,7 @@ pub fn mat2x3<T: Scalar>(m11: T, m12: T, m13: T,
 
 /// Create a new 2x4 matrix.
 #[rustfmt::skip]
-pub fn mat2x4<T: Scalar>(m11: T, m12: T, m13: T, m14: T,
+pub const fn mat2x4<T: Scalar>(m11: T, m12: T, m13: T, m14: T,
                          m21: T, m22: T, m23: T, m24: T) -> TMat2x4<T> {
     TMat::<T, 2, 4>::new(
         m11, m12, m13, m14,
@@ -92,7 +92,7 @@ pub fn mat2x4<T: Scalar>(m11: T, m12: T, m13: T, m14: T,
 /// ```
 #[rustfmt::skip]
 #[allow(clippy::too_many_arguments)]
-pub fn mat3<T: Scalar>(m11: T, m12: T, m13: T,
+pub const fn mat3<T: Scalar>(m11: T, m12: T, m13: T,
                        m21: T, m22: T, m23: T,
                        m31: T, m32: T, m33: T) -> TMat3<T> {
     TMat::<T, 3, 3>::new(
@@ -104,7 +104,7 @@ pub fn mat3<T: Scalar>(m11: T, m12: T, m13: T,
 
 /// Create a new 3x2 matrix.
 #[rustfmt::skip]
-pub fn mat3x2<T: Scalar>(m11: T, m12: T,
+pub const fn mat3x2<T: Scalar>(m11: T, m12: T,
                          m21: T, m22: T,
                          m31: T, m32: T) -> TMat3x2<T> {
     TMat::<T, 3, 2>::new(
@@ -117,7 +117,7 @@ pub fn mat3x2<T: Scalar>(m11: T, m12: T,
 /// Create a new 3x3 matrix.
 #[rustfmt::skip]
 #[allow(clippy::too_many_arguments)]
-pub fn mat3x3<T: Scalar>(m11: T, m12: T, m13: T,
+pub const fn mat3x3<T: Scalar>(m11: T, m12: T, m13: T,
                          m21: T, m22: T, m23: T,
                          m31: T, m32: T, m33: T) -> TMat3<T> {
     TMat::<T, 3, 3>::new(
@@ -130,7 +130,7 @@ pub fn mat3x3<T: Scalar>(m11: T, m12: T, m13: T,
 /// Create a new 3x4 matrix.
 #[rustfmt::skip]
 #[allow(clippy::too_many_arguments)]
-pub fn mat3x4<T: Scalar>(m11: T, m12: T, m13: T, m14: T,
+pub const fn mat3x4<T: Scalar>(m11: T, m12: T, m13: T, m14: T,
                          m21: T, m22: T, m23: T, m24: T,
                          m31: T, m32: T, m33: T, m34: T) -> TMat3x4<T> {
     TMat::<T, 3, 4>::new(
@@ -142,7 +142,7 @@ pub fn mat3x4<T: Scalar>(m11: T, m12: T, m13: T, m14: T,
 
 /// Create a new 4x2 matrix.
 #[rustfmt::skip]
-pub fn mat4x2<T: Scalar>(m11: T, m12: T,
+pub const fn mat4x2<T: Scalar>(m11: T, m12: T,
                          m21: T, m22: T,
                          m31: T, m32: T,
                          m41: T, m42: T) -> TMat4x2<T> {
@@ -157,7 +157,7 @@ pub fn mat4x2<T: Scalar>(m11: T, m12: T,
 /// Create a new 4x3 matrix.
 #[rustfmt::skip]
 #[allow(clippy::too_many_arguments)]
-pub fn mat4x3<T: Scalar>(m11: T, m12: T, m13: T,
+pub const fn mat4x3<T: Scalar>(m11: T, m12: T, m13: T,
                          m21: T, m22: T, m23: T,
                          m31: T, m32: T, m33: T,
                          m41: T, m42: T, m43: T) -> TMat4x3<T> {
@@ -172,7 +172,7 @@ pub fn mat4x3<T: Scalar>(m11: T, m12: T, m13: T,
 /// Create a new 4x4 matrix.
 #[rustfmt::skip]
 #[allow(clippy::too_many_arguments)]
-pub fn mat4x4<T: Scalar>(m11: T, m12: T, m13: T, m14: T,
+pub const fn mat4x4<T: Scalar>(m11: T, m12: T, m13: T, m14: T,
                          m21: T, m22: T, m23: T, m24: T,
                          m31: T, m32: T, m33: T, m34: T,
                          m41: T, m42: T, m43: T, m44: T) -> TMat4<T> {
@@ -187,7 +187,7 @@ pub fn mat4x4<T: Scalar>(m11: T, m12: T, m13: T, m14: T,
 /// Create a new 4x4 matrix.
 #[rustfmt::skip]
 #[allow(clippy::too_many_arguments)]
-pub fn mat4<T: Scalar>(m11: T, m12: T, m13: T, m14: T,
+pub const fn mat4<T: Scalar>(m11: T, m12: T, m13: T, m14: T,
                        m21: T, m22: T, m23: T, m24: T,
                        m31: T, m32: T, m33: T, m34: T,
                        m41: T, m42: T, m43: T, m44: T) -> TMat4<T> {
@@ -200,6 +200,6 @@ pub fn mat4<T: Scalar>(m11: T, m12: T, m13: T, m14: T,
 }
 
 /// Creates a new quaternion.
-pub fn quat<T: RealNumber>(x: T, y: T, z: T, w: T) -> Qua<T> {
+pub const fn quat<T: RealNumber>(x: T, y: T, z: T, w: T) -> Qua<T> {
     Qua::new(w, x, y, z)
 }
